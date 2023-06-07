@@ -1,29 +1,54 @@
-# Document Description
-## Background
-This folder contains all the runtime scripts for MIA (black-box/threshold).Specifically, this includes scripts for membership inference attacks. Scripts to test the effectiveness of defenses. As well as MEA/MDIA combined with MIA's scripts.
-## Useage
-Description of the parameters in the script.
+# NLP-Doctor: Privacy Evaluation System for NLP Models
+## Descriptions
+This repo contains source code and pre-processed corpora for "NLP-Doctor: Privacy Evaluation System for NLP Models"
 
-**model_name_or_path** : path of the target model.
+## Dependencies
+transformers==4.26.0.dev0
 
-**model_name_or_path_shadow** : path of the shadow model.
+torch==1.8.0+cu111
+
+tokenizers==0.13.3
+
+opacus==1.2.0
+
+python==3.7.15
+
+## Usage
+
+For installing transformers can be found at https://github.com/huggingface/transformers. After install it, You need to replace the four scripts in the package, trainer.py,modeling_bert.py,modeling_roberta.py,modeling_gpt2.py, with the scripts we provide.
+
+In transformers, the addresses corresponding to these four scripts are：
+
+trainer.py：/root/dataln/nianke_disentangled/transformers/src/transformers/trainer.py
+
+modeling_bert.py: /root/dataln/nianke_disentangled/transformers/src/transformers/models/bert/modeling_bert.py
+
+modeling_roberta.py: /root/dataln/nianke_disentangled/transformers/src/transformers/models/roberta/modeling_roberta.py
+
+modeling_gpt2.py: /root/dataln/nianke_disentangled/transformers/src/transformers/models/gpt2/modeling_gpt2.py
+
+Then,the text-classification folder(transformers/examples/pytorch/text-classification) in the transformer needs to be removed. For example, mv text-classification text-classification.bak. Next recreate a new text-classification folder and put in the remaining files we provide
+
+## How to train target model
+
+Could use bert_base.sh,roberta_base.sh and gpt2_medium.sh to train target model
+
+```
+***model_name_or_path** : path of the target model.
 
 **task_name/dataset_name** : path of data.If the data comes from a GLUE dataset you should use task_name, the rest should use datasets_name
 
 **cache_dir** : cache directory to store downloaded data and models.
 
-**partial** ： If you assume that the attacker has access to partial data, you can set this parameter to True.
+**target_or_shadow** : train target model or shadow model(can choise target or shadow)
 
-### bert_base_black_shadow.sh/roberta_base_black_shadow.sh/gpt2_medium_black_shadow.sh
-These three are the scripts of MIA under different models.
+run:
+./bert_base.sh
 
-For example, you want to do an attack on a Bert model trained on MRPC.You can follow the description above to set the corresponding parameters than to run ./bert_base_black_shadow.sh mrpc
+If the reason of internet,you can't download Bert model. You can download manually from https://huggingface.co/bert-base-uncased/tree/main
+```
 
-### bert_base_dpsgd.sh/bert_base_kd.sh/bert_base_texthide.sh
-These three are the scripts of the test effectiveness of defenses under Bert models. The methods of defence mainly include DP-SGD,SELENA and Texthide.The content of the three scripts is basically the same, the main difference lies in the path of the target model and shadow model. The model needs to be obtained using the corresponding defense script.
+## attack and defense
 
-For example, you want to do an test on a Bert model trained on MRPC.You can follow the description above to set the corresponding parameters than to run ./bert_base_dpsgd.sh mrpc
+We have placed the attack and defence scripts in five folders：MIA, MDIA, AIA, MEA, defense. The instructions for use can be found in the README.md in the corresponding folder.
 
-### bert_base_black_shadow.sh/bert_base_inversion2mia.sh
-These three are the MEA/MDIA combined with MIA's scripts. For bert_base_black_shadow.sh, you only need modify the path of target model(this can be obtained from the training of MEA). For bert_base_black_shadow.sh, firstly, you need to run the script of MDIA,
-Then, you can get the generated data and modify data path (3177 row in the trainer.py). Finally run ./bert_base_inversion2mia.sh ag_news
