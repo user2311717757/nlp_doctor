@@ -62,6 +62,6 @@ The detials of the parmaters are as follows:
 
  **Note: **For other details about the hyper-parameters, please refer to the `AIA_logits_black.sh' file and `AIA_representation_white.sh' file.
 ## Datastes
-Our datasets for this task is from "[**Model Extraction and Adversarial Transferability, Your BERT is Vulnerable!**](https://github.com/xlhex/extract_and_transfer)" (accepted to NAACL-HLT 2021)
+Our datasets for this task is from "[**Extracted BERT Model Leaks More Information than You Think!**](https://github.com/xlhex/emnlp2022_aia)" (accepted to EMNLP 2022)
 
 
