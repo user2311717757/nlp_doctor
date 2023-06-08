@@ -19,13 +19,13 @@ For installing transformers can be found at https://github.com/huggingface/trans
 
 In transformers, the addresses corresponding to these four scripts are：
 
-trainer.py：/root/dataln/nianke_disentangled/transformers/src/transformers/trainer.py
+trainer.py：transformers/src/transformers/trainer.py
 
-modeling_bert.py: /root/dataln/nianke_disentangled/transformers/src/transformers/models/bert/modeling_bert.py
+modeling_bert.py: transformers/src/transformers/models/bert/modeling_bert.py
 
-modeling_roberta.py: /root/dataln/nianke_disentangled/transformers/src/transformers/models/roberta/modeling_roberta.py
+modeling_roberta.py: transformers/src/transformers/models/roberta/modeling_roberta.py
 
-modeling_gpt2.py: /root/dataln/nianke_disentangled/transformers/src/transformers/models/gpt2/modeling_gpt2.py
+modeling_gpt2.py: transformers/src/transformers/models/gpt2/modeling_gpt2.py
 
 Then,the text-classification folder(transformers/examples/pytorch/text-classification) in the transformer needs to be removed. For example, mv text-classification text-classification.bak. Next recreate a new text-classification folder and put in the remaining files we provide
 
