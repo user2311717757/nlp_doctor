@@ -7,7 +7,7 @@ To do the attribute inference attack, there are mainly two steps:
 | --- | --- | --- |
 | Hide in bed, sheets overhead	 | 5 | 0 1 |
 
-Where the 1st column contains the text, the 2nd column contains the lable of main task, and 3rd column contains the label of the sensitive attributes.
+The 1st column contains the text, the 2nd column contains the lable of main task, and 3rd column contains the label of the sensitive attributes.
 **Step2: **
 If you want to run AIA under the black-box setting, run the following code:
 ```python
