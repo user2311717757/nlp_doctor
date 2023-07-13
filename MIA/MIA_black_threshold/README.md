@@ -1,7 +1,7 @@
 
 # Document Description
 ## Background
-This folder contains all the runtime scripts for MIA (black-box/threshold).Specifically, this includes scripts for membership inference attacks. Scripts to test the effectiveness of defenses. As well as MEA/MDIA combined with MIA's scripts.
+This folder contains all the runtime scripts for MIA (black-box/threshold).Specifically, this includes scripts for membership inference attacks. Scripts to test the effectiveness of defense, as well as MEA/MDIA combined with MIA's scripts.
 ## Useage
 
 Description of the parameters in the script.
