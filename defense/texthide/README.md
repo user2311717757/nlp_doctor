@@ -1,6 +1,6 @@
 # Document Description
 ## Background
-This folder contains the training scripts for DP-SGD. If you want to run this scripts, you should install opacus.
+This folder contains the training scripts for Texthide. 
 ## Useage
 
 Description of the parameters in the script.
