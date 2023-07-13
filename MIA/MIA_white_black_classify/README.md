@@ -1,6 +1,6 @@
 # Document Description
 ## Background
-This folder contains all the runtime scripts for MIA (black-box or white-box / Classification Model ).Specifically, this includes scripts for membership inference attacks. Scripts to test the effectiveness of defenses. As well as MEA/MDIA combined with MIA's scripts.
+This folder contains all the runtime scripts for MIA (black-box or white-box / Classification Model ).Specifically, this includes scripts for membership inference attacks, scripts to test the effectiveness of defenses, as well as MEA/MDIA combined with MIA's scripts.
 ## Useage
 
 Description of the parameters in the script.
