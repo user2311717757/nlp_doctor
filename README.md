@@ -15,7 +15,7 @@ python==3.7.15
 
 ## Usage
 
-For installing transformers can be found at https://github.com/huggingface/transformers. After install it, You need to replace the four scripts in the package, trainer.py,modeling_bert.py,modeling_roberta.py,modeling_gpt2.py, with the scripts we provide.
+Installing transformers can be found at https://github.com/huggingface/transformers. After installing it, You need to replace the four scripts in the package, trainer.py,modeling_bert.py,modeling_roberta.py,modeling_gpt2.py, with the scripts we provide.
 
 In transformers, the addresses corresponding to these four scripts are：
 
@@ -27,11 +27,11 @@ modeling_roberta.py: transformers/src/transformers/models/roberta/modeling_rober
 
 modeling_gpt2.py: transformers/src/transformers/models/gpt2/modeling_gpt2.py
 
-Then,the text-classification folder(transformers/examples/pytorch/text-classification) in the transformer needs to be removed. For example, mv text-classification text-classification.bak. Next recreate a new text-classification folder and put in the remaining files we provide
+Then, the text-classification folder(transformers/examples/pytorch/text-classification) in the transformer needs to be removed. For example, mv text-classification text-classification.bak. Next recreate a new text-classification folder and put in the remaining files we provide.
 
 ## How to train target model
 
-Could use bert_base.sh,roberta_base.sh and gpt2_medium.sh to train target model
+You can use bert_base.sh,roberta_base.sh and gpt2_medium.sh to train target model.
 
 ```
 ***model_name_or_path** : path of the target model.
@@ -45,7 +45,7 @@ Could use bert_base.sh,roberta_base.sh and gpt2_medium.sh to train target model
 run:
 ./bert_base.sh
 
-If the reason of internet,you can't download Bert model. You can download manually from https://huggingface.co/bert-base-uncased/tree/main
+If you can't download Bert model, you can download it manually from https://huggingface.co/bert-base-uncased/tree/main.
 ```
 
 ## attack and defense
