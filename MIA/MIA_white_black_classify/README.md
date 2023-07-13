@@ -15,7 +15,7 @@ Description of the parameters in the script.
 
 **partial** ： If you assume that the attacker has access to partial data, you can set this parameter to True.
 
-**data_path** ：The path to the output, before the horizontal bar is the model name, after the horizontal bar is the dataset name, optionally the model name_dataset name_(partial or unwritten).
+**data_path** ：The path to the output, before the horizontal bar, is the model name; after the horizontal bar, it is the dataset name.(optionally, the model name_dataset name_(partial or unwritten)).
 
 **select** : Options are white_have_grad (with all information), black_no_grad (without gradient information - black box + attack model scenario).
 
