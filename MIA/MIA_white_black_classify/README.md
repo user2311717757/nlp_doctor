@@ -59,7 +59,7 @@ select = white_have_grad
 ```
 
 ### bert_base_white_shadow.sh/bert_base_inversion2mia.sh
-These three are the MEA/MDIA combined with MIA's scripts. For bert_base_black_shadow.sh, you only need modify the path of target model(this can be obtained from the training of MEA). 
+These three are the MEA/MDIA combined with MIA's scripts. For bert_base_black_shadow.sh, you only need to modify the path of target model(this can be obtained from the training of MEA). 
 
 For bert_base_black_shadow.sh, firstly, you need to run the script of MDIA,
 Then, you can get the generated data and modify data path (3177 row in the trainer.py {MDIA/MDIA_white_nodata/inversion2mia_data/test_data_yelp_polarity.pt}). Finally run
