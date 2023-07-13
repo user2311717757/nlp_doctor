@@ -1,13 +1,13 @@
 ## Usage
 To do the attribute inference attack, there are mainly two steps: 
 **Step1 :**
-** **Put your target dataset under directory _**aia_datasets** _; The dataset should contrain two files: _train.tsv _and _dev.tsv _; The format of the tsv file should be as follows, taking the dataset** blog** as an example:
+** **Put your target dataset under directory _**aia_datasets** _. The dataset should contrain two files: _train.tsv _and _dev.tsv _. The format of the tsv file should be as follows, taking the dataset** blog** as an example:
 
 | Girls are evil and I can prove it. I found this somewhere. | 9 | 1 |
 | --- | --- | --- |
 | Hide in bed, sheets overhead	 | 5 | 0 1 |
 
-where the 1st column contains the text, the 2nd column contains the lable of main task, and 3rd column contains the label of the sensitive attributes.
+Where the 1st column contains the text, the 2nd column contains the lable of main task, and 3rd column contains the label of the sensitive attributes.
 **Step2: **
 If you want to run AIA under the black-box setting, run the following code:
 ```python
