@@ -50,5 +50,5 @@ If you can't download Bert model, you can download it manually from https://hugg
 
 ## attack and defense
 
-We have placed the attack and defence scripts in five folders：MIA, MDIA, AIA, MEA, defense, LLM-Attack-Module. The instructions for use can be found in the README.md in the corresponding folder.
+We have placed the attack and defence scripts in eight folders：MIA, MDIA, AIA, MEA, defense, LMIA, LMDIA, LAIA, LMEA. The instructions for use can be found in the README.md in the corresponding folder.
 
