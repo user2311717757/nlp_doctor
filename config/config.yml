@@ -1,0 +1,44 @@
+{
+    "model_list": ["small_model", "LLM"],
+    "small_model": ["Bert", "Roberta", "GPT2-small"],
+    "LLM": ["Llama2", "ChatGLM2", "GPT2-xl"],
+    "dataset": {"MRPC","RTE"},
+    "MIA_train":{
+          "epochs":50,
+          "lr":0.01,
+          "banch_size":30,
+       },
+     "MEA_train": {
+	"epochs":50,
+         "lr":0.01,
+         "banch_size":30,
+
+      },
+     "AIA_train": {
+	"epochs":50,
+         "lr":0.01,
+         "banch_size":30,
+
+      },
+     "LMIA_train": {
+	"epochs":50,
+         "lr":0.01,
+         "banch_size":30,
+
+      },
+     "LMEA_train": {
+	"epochs":50,
+         "lr":0.01,
+         "banch_size":30,
+
+      },
+     "LAIA_train": {
+	"epochs":50,
+         "lr":0.01,
+         "banch_size":30,
+
+      },
+     "Target_Model": ["black-box", "white-box"],
+     "Auxiliary_data": ["Shadow Data", "Partial Data"]
+}
+
