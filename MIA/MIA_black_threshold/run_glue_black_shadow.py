@@ -278,6 +278,70 @@ def main():
     #
     # In distributed training, the load_dataset function guarantee that only one local process can concurrently
     # download the dataset.
+    def Data_Segment():
+        raw_datasets["train"] = load_dataset(
+                "glue",
+                data_args.task_name,
+                split=f"train[:{25}%]",
+                cache_dir=model_args.cache_dir,
+                use_auth_token=True if model_args.use_auth_token else None,
+            )
+        raw_datasets["train-nm"] = load_dataset(
+            "glue",
+            data_args.task_name,
+            split=f"train[{25}%:{50}%]",
+            cache_dir=model_args.cache_dir,
+            use_auth_token=True if model_args.use_auth_token else None,
+        )
+        raw_datasets["shadow-n"] = load_dataset(
+            "glue",
+            data_args.task_name,
+            split=f"train[{50}%:{75}%]",
+            cache_dir=model_args.cache_dir,
+            use_auth_token=True if model_args.use_auth_token else None,
+        )
+        raw_datasets["shadow-nm"] = load_dataset(
+            "glue",
+            data_args.task_name,
+            split=f"train[{75}%:]",
+            cache_dir=model_args.cache_dir,
+            use_auth_token=True if model_args.use_auth_token else None,
+        )
+    def Load_aux_data():
+        raw_datasets = load_dataset(
+            "glue",
+            data_args.task_name,
+            cache_dir=model_args.cache_dir,
+            use_auth_token=True if model_args.use_auth_token else None,
+        )
+        raw_datasets["shadow-n"] = load_dataset(
+            "glue",
+            data_args.task_name,
+            split=f"train[:{17}%]",
+            cache_dir=model_args.cache_dir,
+            use_auth_token=True if model_args.use_auth_token else None,
+        )
+        raw_datasets["train"] = load_dataset(
+            "glue",
+            data_args.task_name,
+            split=f"train[{17}%:{25}%]",
+            cache_dir=model_args.cache_dir,
+            use_auth_token=True if model_args.use_auth_token else None,
+        )
+        raw_datasets["shadow-nm"] = load_dataset(
+            "glue",
+            data_args.task_name,
+            split=f"train[{25}%:{42}%]",
+            cache_dir=model_args.cache_dir,
+            use_auth_token=True if model_args.use_auth_token else None,
+        )
+        raw_datasets["train-nm"] = load_dataset(
+            "glue",
+            data_args.task_name,
+            split=f"train[{42}%:{50}%]",
+            cache_dir=model_args.cache_dir,
+            use_auth_token=True if model_args.use_auth_token else None,
+        )   
     if data_args.task_name is not None:
         # Downloading and loading a dataset from the hub.
         raw_datasets = load_dataset(
@@ -453,6 +517,24 @@ def main():
     # https://huggingface.co/docs/datasets/loading_datasets.html.
 
     # Labels
+    def Process():
+        tokenizer = AutoTokenizer.from_pretrained(
+        model_args.tokenizer_name if model_args.tokenizer_name else model_args.model_name_or_path,
+        cache_dir=model_args.cache_dir,
+        use_fast=model_args.use_fast_tokenizer,
+        revision=model_args.model_revision,
+        use_auth_token=True if model_args.use_auth_token else None,
+        )
+    def Load_model():
+        model = AutoModelForSequenceClassification.from_pretrained(
+        model_args.model_name_or_path,
+        from_tf=bool(".ckpt" in model_args.model_name_or_path),
+        config=config,
+        cache_dir=model_args.cache_dir,
+        revision=model_args.model_revision,
+        use_auth_token=True if model_args.use_auth_token else None,
+        ignore_mismatched_sizes=model_args.ignore_mismatched_sizes,
+        )
     if data_args.task_name is not None:
         is_regression = data_args.task_name == "stsb"
         if not is_regression:
