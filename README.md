@@ -1,6 +1,6 @@
 # Privacy Evaluation Framework for NLP Models
 ## Descriptions
-This repo contains source code and pre-processed corpora for "Privacy Evaluation Benchmarks for NLP Models"
+This repo contains source code and pre-processed corpora for "Privacy Evaluation Benchmarks for NLP Models". Accepted by EMNLP2024
 
 ## Dependencies
 transformers==4.26.0.dev0
